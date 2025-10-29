@@ -1,8 +1,8 @@
 package org.example;
 import org.example.gradleandrew.RegistrationData;
-import org.openqa.selenium.By;
 import org.junit.jupiter.api.*;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class RegisterNewUser extends TestBase{
@@ -11,7 +11,7 @@ public class RegisterNewUser extends TestBase{
 
 
     @Test
-    public void registerUser() {
+    public void registerUser() throws IOException {
         RegistrationData user = new RegistrationData(
                 "Anna",
                 "Doe",
@@ -19,7 +19,7 @@ public class RegisterNewUser extends TestBase{
                 RegistrationData.Gender.MALE,
                 "1234567890",
                 LocalDate.of(1995, 8, 20),
-                "theme",
+                "Ma",
                 RegistrationData.Hobbies.READING,
                 "New city, orlando, 34-3434"
         );
@@ -35,8 +35,8 @@ public class RegisterNewUser extends TestBase{
         fillSubject(user.getSubject());
         checkHobbies();
         fillAddress(user.getAddress());
-
-        driver.findElement(By.id("submit")).click();
+        loadFile();
+        getSubmit();
         Assertions.assertTrue(driver.getTitle().contains("DEMOQA"));
     }
 

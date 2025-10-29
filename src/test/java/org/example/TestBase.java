@@ -6,8 +6,14 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.time.LocalDate;
 
 public class TestBase {
@@ -61,5 +67,46 @@ public class TestBase {
 
     protected void checkHobbies() {
         driver.findElement(By.id("hobbies-checkbox-1")).click();
+    }
+
+
+
+
+    public void generateFile() {
+        // 1. Создаём временный файл с префиксом "upload" и расширением ".txt"
+        Path tempFile = Files.createTempFile("upload", ".txt");
+
+        // 2. Записываем в него текст
+        String content = "Это тестовый файл для загрузки через Selenium.";
+        Files.write(tempFile, content.getBytes(), StandardOpenOption.WRITE);
+
+        // 3. Выводим путь (можно передать в Selenium)
+        System.out.println("Временный файл создан: " + tempFile.toAbsolutePath());
+
+        // ⚠️ Файл будет автоматически удалён при завершении JVM, если не вызвать delete
+        // Но лучше удалять явно после использования в тесте:
+        // Files.deleteIfExists(tempFile);
+    }
+
+
+    protected void loadFile() throws IOException {
+        // Создаём временный файл
+        Path tempFile = Files.createTempFile("selenium-upload", ".txt");
+        Files.write(tempFile, "Hello from Selenium!".getBytes());
+
+        try {
+            // Передаём путь в input type="file"
+            WebElement fileInput = driver.findElement(By.id("uploadPicture"));
+            fileInput.sendKeys(tempFile.toAbsolutePath().toString());
+
+
+        } finally {
+            // Удаляем файл после теста
+            Files.deleteIfExists(tempFile);
+        }
+    }
+
+    protected void getSubmit() {
+        driver.findElement(By.id("submit")).click();
     }
 }
