@@ -44,7 +44,10 @@ public class TestBase {
     protected void fillMobile(String mobile) { driver.findElement(By.id("userNumber")).sendKeys(mobile);
     }
 
-    protected void selectDateOfBirth(LocalDate dateOfBirth) {driver.findElement(By.id("dateOfBirthInput")).sendKeys(dateOfBirth);
+    protected void selectDateOfBirth() {
+
+        driver.findElement(By.id("dateOfBirthInput")).click();
+        driver.findElement(By.cssSelector("div.react-datepicker__day react-datepicker__day--015")).click();
     }
 
     protected void selectGender(String string) { driver.findElement(By.id("gender-radio-1")).click();
@@ -54,5 +57,9 @@ public class TestBase {
     }
 
     protected void fillAddress(String address) {driver.findElement(By.id("currentAddress")).sendKeys(address);
+    }
+
+    protected void checkHobbies() {
+        driver.findElement(By.id("hobbies-checkbox-1")).click();
     }
 }

@@ -31,8 +31,9 @@ public class RegisterNewUser extends TestBase{
         fillEmail(user.getEmail());
         selectGender(user.getGender().toString());
         fillMobile(user.getMobile());
-        selectDateOfBirth(user.getDateOfBirth());
+        selectDateOfBirth();
         fillSubject(user.getSubject());
+        checkHobbies();
         fillAddress(user.getAddress());
 
         driver.findElement(By.id("submit")).click();
