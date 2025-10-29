@@ -4,26 +4,9 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.*;
 
-public class RegisterNewUser {
+public class RegisterNewUser extends TestBase{
 
-    private WebDriver driver;
 
-    @BeforeAll
-    static void SetUp() {
-        WebDriverManager.firefoxdriver().setup();
-    }
-
-    @BeforeEach
-    void setupTest() {
-        driver = new FirefoxDriver();
-    }
-
-    @AfterEach
-    void teardown() {
-        if (driver != null) {
-            driver.quit();
-        }
-    }
 
 
     @Test
