@@ -54,7 +54,7 @@ public class RegistrationData {
         }
     }
 
-    private enum Hobbies {
+    public enum Hobbies {
         SPORTS("Sports"),
         READING("Reading"),
         MUSIC("Music");
