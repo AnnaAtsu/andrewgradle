@@ -5,6 +5,8 @@ import org.junit.jupiter.api.*;
 import java.io.IOException;
 import java.time.LocalDate;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 public class RegisterNewUser extends TestBase{
 
 
@@ -18,7 +20,7 @@ public class RegisterNewUser extends TestBase{
                 "artr@mail.ru",
 
                 "1234567890",
-               "Ma",
+                "Ma",
                 RegistrationData.Hobbies.READING,
                 "New city, orlando, 34-3434"
         );
@@ -36,7 +38,10 @@ public class RegisterNewUser extends TestBase{
         fillAddress(user.getAddress());
         generateAndLoadFile();
         getSubmit();
-        Assertions.assertTrue(driver.getTitle().contains("DEMOQA"));
-    }
+        assertTrue(driver.getTitle().contains("DEMOQA"));
+        //первая проверка
+        PracticeFormResultModal modal = new PracticeFormResultModal(driver);
+        modal.waitForVisible();
 
+    }
 }

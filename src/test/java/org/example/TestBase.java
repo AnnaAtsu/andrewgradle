@@ -92,12 +92,9 @@ public class TestBase {
     }
 
     protected void checkHobbies() {
+
         driver.findElement(By.id("hobbies-checkbox-1")).click();
     }
-
-
-
-
 
 
 
