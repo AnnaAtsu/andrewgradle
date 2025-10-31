@@ -24,7 +24,7 @@ public class PracticeFormResultModal {
     }
 
 
-    // Более строгая версия — с ожиданием
+    //  с ожиданием
     public void waitForVisible() {
         wait.until(webDriver -> modalTitle.isDisplayed());
     }

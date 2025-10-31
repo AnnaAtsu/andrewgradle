@@ -18,7 +18,6 @@ public class RegisterNewUser extends TestBase{
                 "Anna",
                 "Doe",
                 "artr@mail.ru",
-
                 "1234567890",
                 "Ma",
                 RegistrationData.Hobbies.READING,
@@ -42,6 +41,7 @@ public class RegisterNewUser extends TestBase{
         //первая проверка
         PracticeFormResultModal modal = new PracticeFormResultModal(driver);
         modal.waitForVisible();
+        //проверка за заполнение поля в модальном окне
 
     }
 }
