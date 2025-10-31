@@ -21,6 +21,7 @@ public class GetUsers {
     @Story("SHOW users")
     @Severity(SeverityLevel.BLOCKER)
     @Description("Проверка получения списка пользователей через GET /api/users?page=2")
+
     public void testGetUser() {
         step("Отправить GET-запрос на список пользователей на 2 странице", () -> {
         baseURI = "https://reqres.in/";

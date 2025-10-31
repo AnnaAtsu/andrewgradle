@@ -16,10 +16,9 @@ public class RegisterNewUser extends TestBase{
                 "Anna",
                 "Doe",
                 "artr@mail.ru",
-                RegistrationData.Gender.MALE,
+
                 "1234567890",
-                LocalDate.of(1995, 8, 20),
-                "Ma",
+               "Ma",
                 RegistrationData.Hobbies.READING,
                 "New city, orlando, 34-3434"
         );
@@ -29,13 +28,13 @@ public class RegisterNewUser extends TestBase{
         fillFistName(user.getFirstName());
         fillLastName(user.getLastName());
         fillEmail(user.getEmail());
-        selectGender(user.getGender().toString());
+        selectGender();
         fillMobile(user.getMobile());
         selectDateOfBirth();
         fillSubject(user.getSubject());
         checkHobbies();
         fillAddress(user.getAddress());
-        loadFile();
+        generateAndLoadFile();
         getSubmit();
         Assertions.assertTrue(driver.getTitle().contains("DEMOQA"));
     }

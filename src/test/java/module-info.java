@@ -17,11 +17,11 @@ open module org.example.gradleandrew.test {
     requires io.qameta.allure.commons;
     requires rest.assured;
     requires org.hamcrest;
-    requires org.seleniumhq.selenium.api;
     requires org.seleniumhq.selenium.chrome_driver;
     requires io.github.bonigarcia.webdrivermanager;
     requires org.seleniumhq.selenium.firefox_driver;
     requires org.example.gradleandrew;
+    requires org.seleniumhq.selenium.support;
 
     // Экспортируем пакет с тестами, чтобы JUnit мог его обнаружить
     exports org.example;
