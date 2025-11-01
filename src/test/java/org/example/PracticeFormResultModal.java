@@ -52,11 +52,9 @@ public class PracticeFormResultModal extends TestBase{
     public static void shouldDisplayCorrectNameInResultModal() {
 
         PracticeFormResultModal modal = new PracticeFormResultModal(driver);
-        // Ожидаемое полное имя
         String expectedFullName = user.getFirstName() + " " + user.getLastName();
         // Получаем фактические значения из таблицы
         String actualName = modal.getFieldValueFromResultTable("Student Name");
-       // Проверки
         assertEquals(expectedFullName, actualName, "Имя не совпадает");
 
     }
@@ -65,8 +63,6 @@ public class PracticeFormResultModal extends TestBase{
         PracticeFormResultModal modal = new PracticeFormResultModal(driver);
         // Получаем фактические значения из таблицы
              String actualEmail = modal.getFieldValueFromResultTable("Student Email");
-        // Проверки
-
-        assertEquals(user.getEmail(), actualEmail, "Email не совпадает");
+         assertEquals(user.getEmail(), actualEmail, "Email не совпадает");
     }
 }
