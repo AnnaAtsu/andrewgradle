@@ -38,6 +38,14 @@ public class TestBase {
         }
     }
 
+
+    // @AfterEach
+    // void attachScreenshot() {
+    // if (hasFailed()) {
+    //    Allure.addAttachment("Screenshot", new ByteArrayInputStream(((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES)));
+    //      }
+    //  }
+
     protected void fillEmail(String email) { driver.findElement(By.id("userEmail")).sendKeys(email);
     }
 
@@ -126,5 +134,9 @@ public class TestBase {
 
     protected void getSubmit() {
         driver.findElement(By.id("submit")).click();
+    }
+
+    protected void openMainPage() {
+        driver.get("https://demoqa.com/automation-practice-form");
     }
 }

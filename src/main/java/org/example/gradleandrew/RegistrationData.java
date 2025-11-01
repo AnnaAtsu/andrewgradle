@@ -10,7 +10,7 @@ public class RegistrationData {
     private final String mobile; // 10 цифр как строка
 
     private final String subject;
-    private final Hobbies hobbies;
+
 
     private final String address;
     public String getFirstName() {
@@ -55,7 +55,7 @@ public class RegistrationData {
             return displayHobby;
         }
             }
-    public RegistrationData(String firstName, String lastName, String email,  String mobile, String subject, Hobbies hobbies, String address) {
+    public RegistrationData(String firstName, String lastName, String email,  String mobile, String subject, String address) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -63,7 +63,7 @@ public class RegistrationData {
         this.mobile = mobile;
 
         this.subject = subject;
-        this.hobbies = hobbies;
+
         this.address = address;
     }
 

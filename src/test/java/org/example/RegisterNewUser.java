@@ -1,9 +1,10 @@
 package org.example;
+
 import org.example.gradleandrew.RegistrationData;
 import org.junit.jupiter.api.*;
 
 import java.io.IOException;
-import java.time.LocalDate;
+
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -20,12 +21,9 @@ public class RegisterNewUser extends TestBase{
                 "artr@mail.ru",
                 "1234567890",
                 "Ma",
-                RegistrationData.Hobbies.READING,
-                "New city, orlando, 34-3434"
+               "New city, orlando, 34-3434"
         );
-
-
-        driver.get("https://demoqa.com/automation-practice-form");
+        openMainPage();
         fillFistName(user.getFirstName());
         fillLastName(user.getLastName());
         fillEmail(user.getEmail());
@@ -41,7 +39,9 @@ public class RegisterNewUser extends TestBase{
         //первая проверка
         PracticeFormResultModal modal = new PracticeFormResultModal(driver);
         modal.waitForVisible();
-        //проверка за заполнение поля в модальном окне
-
+        //проверка за заполнение поля имени и email в модальном окне
+        PracticeFormResultModal.shouldDisplayCorrectNameInResultModal();
+        PracticeFormResultModal.shouldDisplayCorrectEmailInResultModal();
     }
+
 }
