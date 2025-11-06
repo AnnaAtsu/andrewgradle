@@ -4,6 +4,7 @@ plugins {
     id 'org.javamodularity.moduleplugin' version '1.8.12'
     id 'org.openjfx.javafxplugin' version '0.0.13'
     id 'org.beryx.jlink' version '2.25.0'
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group 'org.example'
@@ -11,6 +12,13 @@ version '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+}
+allure {
+    version = '2.25.0'
+    autoconfigure = true
+    useJUnit5 {
+        version = '2.25.0'
+    }
 }
 
 ext {

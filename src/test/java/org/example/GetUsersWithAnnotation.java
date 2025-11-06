@@ -19,7 +19,7 @@ public class GetUsersWithAnnotation {
     @Severity(SeverityLevel.CRITICAL)
     @Description("Проверка получения списка пользователей через GET /api/users?page=2 с аннотацией Step")
     @Step("Получить список пользователей на второй странице")
-    public void testGetUser() {
+    public void testGetUserwithAnnotations() {
         baseURI = "https://reqres.in/";
         given()
                 .filter(new AllureRestAssured())
