@@ -28,11 +28,14 @@ public class TestBase {
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless"); // для Jenkins
         options.addArguments("--no-sandbox");
+
     }
 
     @BeforeEach
     void setupTest() {
         driver = new FirefoxDriver();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
     }
 
     @AfterEach
