@@ -16,7 +16,7 @@ public class GetUsersWithAnnotation {
     @Epic("API Tests")
     @Feature("User Management")
     @Story("SHOW users")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     @Description("Проверка получения списка пользователей через GET /api/users?page=2 с аннотацией Step")
     @Step("Получить список пользователей на второй странице")
     public void testGetUser() {

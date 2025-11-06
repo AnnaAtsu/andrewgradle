@@ -1,5 +1,6 @@
 package org.example;
 
+import io.qameta.allure.*;
 import org.example.gradleandrew.RegistrationData;
 import org.junit.jupiter.api.*;
 
@@ -14,6 +15,12 @@ public class RegisterNewUser extends TestBase{
 
 
     @Test
+    @Epic("UI Tests")
+    @Feature("User Management")
+    @Story("Fill the form")
+    @Severity(SeverityLevel.CRITICAL)
+    @Description("Заполнение формы на UI")
+    @Step("Заполнить форму с данными пользователя")
     public void registerUser() throws IOException {
         RegistrationData user = new RegistrationData(
                 "Anna",

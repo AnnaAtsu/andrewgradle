@@ -24,7 +24,7 @@ Map<String, String> requestBody = Map.of(
     @Story("Create users")
     @Severity(SeverityLevel.CRITICAL)
     @Description("Проверка создания пользователя через POST /api/users")
-
+    @Step("Создать нового пользователя")
     public void createUsertest() {
         ValidatableResponse response = step("Создать пользователя и получить ответ", () -> {
      return given()
