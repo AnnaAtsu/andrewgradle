@@ -1,6 +1,5 @@
-package org.example;
+package org.example.gradleandrew;
 
-import org.example.gradleandrew.RegistrationData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +12,7 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class PracticeFormResultModal extends TestBase{
+public class PracticeFormResultModal extends TestBase {
 
      static WebDriver driver;
     WebDriverWait wait;

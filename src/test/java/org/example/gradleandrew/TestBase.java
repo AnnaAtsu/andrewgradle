@@ -1,4 +1,4 @@
-package org.example;
+package org.example.gradleandrew;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -24,7 +24,7 @@ public class TestBase {
 
     @BeforeAll
     static void SetUp() {
-        WebDriverManager.firefoxdriver().setup();
+       // driver = WebDriverManager.chromedriver().getWebDriver();
         FirefoxOptions options = new FirefoxOptions();
         options.addArguments("--headless"); // для Jenkins
         options.addArguments("--no-sandbox");
@@ -33,13 +33,13 @@ public class TestBase {
 
     @BeforeEach
     void setupTest() {
-        driver = new FirefoxDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
+        driver = WebDriverManager.chromedriver().getWebDriver();
+       // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+       // driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
     }
 
     @AfterEach
-    void teardown() {
+    void tearDown() {
         if (driver != null) {
             driver.quit();
         }

@@ -1,15 +1,13 @@
-package org.example;
+package org.example.gradleandrew;
 
 import io.qameta.allure.*;
-import org.example.gradleandrew.RegistrationData;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Test;
 
 import java.io.IOException;
 
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class RegisterNewUser extends TestBase{
+public class RegisterNewUser extends TestBase {
 
 
 

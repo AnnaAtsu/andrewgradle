@@ -1,4 +1,4 @@
-package org.example;
+package org.example.gradleandrew;
 
 import io.qameta.allure.*;
 import io.qameta.allure.restassured.AllureRestAssured;
